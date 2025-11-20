@@ -2,11 +2,11 @@ import { Suspense } from 'react';
 import { SearchResults } from '@/components/search-results';
 import { SearchBar } from '@/components/search-bar';
 
-interface SearchPageProps {
+export default async function SearchPage({
+  searchParams,
+}: {
   searchParams: Promise<{ q?: string }>;
-}
-
-export default async function SearchPage({ searchParams }: SearchPageProps) {
+}) {
   const params = await searchParams;
   const query = params.q || '';
 

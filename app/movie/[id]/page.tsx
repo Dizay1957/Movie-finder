@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
-interface MoviePageProps {
+export default async function MoviePage({
+  params,
+}: {
   params: Promise<{ id: string }>;
-}
-
-export default async function MoviePage({ params }: MoviePageProps) {
+}) {
   const resolvedParams = await params;
   const movieId = parseInt(resolvedParams.id);
 
