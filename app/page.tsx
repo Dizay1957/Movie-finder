@@ -1,11 +1,12 @@
+import { Suspense } from 'react';
 import { SearchBar } from '@/components/search-bar';
 import { MovieCard } from '@/components/movie-card';
-import { fetchTrendingMovies } from '@/lib/tmdb';
+import { fetchTrendingMovies, Movie } from '@/lib/tmdb';
 import { Film } from 'lucide-react';
 
 export default async function HomePage() {
-  let trendingMovies = [];
-  let error = null;
+  let trendingMovies: Movie[] = [];
+  let error: string | null = null;
 
   try {
     trendingMovies = await fetchTrendingMovies();
@@ -26,7 +27,9 @@ export default async function HomePage() {
             Search through millions of movies, get ratings, watch trailers, and
             save your favorites.
           </p>
-          <SearchBar />
+          <Suspense fallback={<div className="h-10" />}>
+            <SearchBar />
+          </Suspense>
         </div>
       </section>
 

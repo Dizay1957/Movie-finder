@@ -1,4 +1,4 @@
-import { searchMovies } from '@/lib/tmdb';
+import { searchMovies, Movie } from '@/lib/tmdb';
 import { MovieCard } from '@/components/movie-card';
 
 interface SearchResultsProps {
@@ -16,8 +16,8 @@ export async function SearchResults({ query }: SearchResultsProps) {
     );
   }
 
-  let movies = [];
-  let error = null;
+  let movies: Movie[] = [];
+  let error: string | null = null;
 
   try {
     movies = await searchMovies(query);
