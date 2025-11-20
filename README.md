@@ -110,16 +110,13 @@ movie-finder/
 5. **Add to Favorites**: Click the heart icon on any movie card
 6. **View Favorites**: Navigate to the Favorites page from the header
 
-## 🌐 Deployment
+## 🌐 Live Demo
 
-### Deploy to Vercel
+The app is deployed and available at: **[https://movie-finder-rose-ten.vercel.app/](https://movie-finder-rose-ten.vercel.app/)**
 
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Add your `NEXT_PUBLIC_TMDB_API_KEY` environment variable
-4. Deploy!
+## 👤 Author
 
-The app will be automatically deployed and available at your Vercel URL.
+**El Yazid** ([@Dizay1957](https://github.com/Dizay1957))
 
 ## 📝 License
 

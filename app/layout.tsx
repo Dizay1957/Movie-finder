@@ -20,21 +20,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="border-b sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <nav className="border-b border-border/40 sticky top-0 z-40 glass backdrop-blur-xl">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <Film className="h-6 w-6" />
+            <Link href="/" className="flex items-center gap-2 font-bold text-xl bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+              <Film className="h-6 w-6 text-primary" />
               Movie Finder
             </Link>
             <Link href="/favorites">
-              <Button variant="ghost">
+              <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors">
                 <Heart className="h-5 w-5 mr-2" />
                 Favorites
               </Button>
             </Link>
           </div>
         </nav>
-        <main>{children}</main>
+        <main className="relative">{children}</main>
       </body>
     </html>
   );

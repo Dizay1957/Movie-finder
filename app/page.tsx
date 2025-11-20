@@ -17,13 +17,17 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-background py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+      <section className="relative py-20 md:py-32 overflow-visible">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-pink-500/10 blur-3xl" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white via-primary to-purple-400 bg-clip-text text-transparent leading-tight">
             Discover Your Next
-            <span className="text-primary"> Favorite Movie</span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              Favorite Movie
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Search through millions of movies, get ratings, watch trailers, and
             save your favorites.
           </p>
@@ -34,10 +38,15 @@ export default async function HomePage() {
       </section>
 
       {/* Trending Movies */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="flex items-center gap-3 mb-8">
-          <Film className="h-6 w-6 text-primary" />
-          <h2 className="text-3xl font-bold">Trending Movies</h2>
+      <section className="container mx-auto px-4 py-12 relative" style={{ zIndex: 1 }}>
+        <div className="flex items-center gap-3 mb-10">
+          <div className="p-2 rounded-lg bg-primary/20">
+            <Film className="h-6 w-6 text-primary" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-muted-foreground bg-clip-text text-transparent">
+            Trending Movies
+          </h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent ml-4" />
         </div>
 
         {error ? (

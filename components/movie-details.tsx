@@ -48,7 +48,8 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
             sizes="100vw"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-purple-500/20" />
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 pb-8">
             <motion.div
@@ -92,7 +93,7 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
                   <Button
                     size="lg"
                     onClick={() => setShowTrailer(true)}
-                    className="bg-red-600 hover:bg-red-700"
+                    className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300"
                   >
                     <Play className="h-5 w-5 mr-2" />
                     Watch Trailer
@@ -102,10 +103,10 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
                   size="lg"
                   variant="outline"
                   onClick={handleFavoriteToggle}
-                  className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+                  className="glass backdrop-blur-md hover:bg-primary/20 text-white border-white/30 hover:border-primary/50 transition-all duration-300"
                 >
                   <Heart
-                    className={`h-5 w-5 mr-2 ${favorite ? 'fill-red-500 text-red-500' : ''}`}
+                    className={`h-5 w-5 mr-2 transition-all duration-300 ${favorite ? 'fill-red-500 text-red-500 scale-110' : ''}`}
                   />
                   {favorite ? 'Remove from Favorites' : 'Add to Favorites'}
                 </Button>
@@ -161,7 +162,7 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
                   {movie.genres.map((genre) => (
                     <span
                       key={genre.id}
-                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                      className="px-4 py-2 bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary rounded-full text-sm font-medium border border-primary/30 backdrop-blur-sm"
                     >
                       {genre.name}
                     </span>
@@ -170,10 +171,12 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
               )}
 
               {/* Overview */}
-              <Card className="mb-6">
+              <Card className="mb-6 glass border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-muted-foreground bg-clip-text text-transparent">
+                    Overview
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     {movie.overview || 'No overview available.'}
                   </p>
                 </CardContent>
@@ -181,9 +184,11 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
 
               {/* Cast */}
               {mainCast.length > 0 && (
-                <Card>
+                <Card className="glass border-border/50">
                   <CardContent className="p-6">
-                    <h2 className="text-2xl font-semibold mb-4">Main Cast</h2>
+                    <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-muted-foreground bg-clip-text text-transparent">
+                      Main Cast
+                    </h2>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                       {mainCast.map((actor) => (
                         <div key={actor.id} className="text-center">
