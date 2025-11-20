@@ -6,11 +6,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 interface MoviePageProps {
-  params: Promise<{ id: string }> | { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function MoviePage({ params }: MoviePageProps) {
-  const resolvedParams = await Promise.resolve(params);
+  const resolvedParams = await params;
   const movieId = parseInt(resolvedParams.id);
 
   if (isNaN(movieId)) {

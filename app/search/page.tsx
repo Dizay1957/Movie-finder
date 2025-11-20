@@ -3,11 +3,11 @@ import { SearchResults } from '@/components/search-results';
 import { SearchBar } from '@/components/search-bar';
 
 interface SearchPageProps {
-  searchParams: Promise<{ q?: string }> | { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const params = await Promise.resolve(searchParams);
+  const params = await searchParams;
   const query = params.q || '';
 
   return (
