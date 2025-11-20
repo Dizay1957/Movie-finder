@@ -112,7 +112,7 @@ movie-finder/
 
 ## 🌐 Live Demo
 
-The app is deployed and available at: **[https://movie-finder-rose-ten.vercel.app/](https://movie-finder-rose-ten.vercel.app/)**
+The app is deployed and available at: **[https://movie-finder-rose-ten.vercel.app/](https://movie-finder-five-henna.vercel.app/)**
 
 ## 👤 Author
 
